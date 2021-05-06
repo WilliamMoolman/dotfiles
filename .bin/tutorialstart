@@ -1,0 +1,10 @@
+#!/bin/bash
+cd ~/code/University/INF1/Tutorials
+if [ -f "tutorial$1-WilliamMoolman" ]; then
+	cd tutorial$1-WilliamMoolman
+	vim Tutorial$1.hs
+else
+	git clone git@github.com:UoE-Inf1A-2020/tutorial$1-WilliamMoolman.git
+	cd tutorial$1-WilliamMoolman
+	vim Tutorial$1.hs
+fi

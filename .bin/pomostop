@@ -1,0 +1,1 @@
+ps aux | grep '.[b]in/timer' | tr -s ' ' | cut -d ' ' -f2 | xargs kill && rm -rf /tmp/pomodoro

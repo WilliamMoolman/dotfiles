@@ -1,0 +1,8 @@
+#!/bin/zsh
+pomodoro() {
+    [ -z "$1" ] && num=1 || num=$1
+    nohup timer -r $num 25 5 25 5 25 5 25 20 &>/dev/null &
+    disown
+}
+
+pomodoro

@@ -1,0 +1,9 @@
+#!/bin/sh
+TOKEN=$(curl -H "Content-Type: application/json" \
+    --request POST \
+    --data '{"username":"will.moolman@hackpartners.com","password":"Account712","grant_type":"password","client_id":"4KxuZ9qzXk3Cfh5RqbhMzT7t","client_secret":"AZ33MUbYbj5HRpGVtRqHUL3eGvJFjdRre6jXcQe2q8hyxBJn"}' \
+    https://admin.vegetation.io/api/auth/token \
+    2>/dev/null | jq -r '.access_token')
+echo Uploads this month: $(curl -H "Accept: application/json" \
+    -H "Authorization: Bearer $TOKEN" \
+    "https://admin.vegetation.io/api/0/uploads?current=1" 2>/dev/null | jq -r '.total')

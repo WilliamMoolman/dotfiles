@@ -9,3 +9,4 @@ cp -r ~/.config/rofi .config
 cp -r ~/.scripts .
 cp -r ~/.bin .
 
+cp ~/.oh-my-zsh/themes/williamlambda.zsh-theme .oh-my-zsh/themes

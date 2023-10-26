@@ -1,0 +1,5 @@
+[core]
+	autocrlf = input
+[user]
+	email = moolman.william@gmail.com
+	name = William Moolman

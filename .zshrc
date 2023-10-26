@@ -73,11 +73,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git autoenv zsh-autosuggestions)
 
-export AUTOENV_ENV_FILENAME=".autoenv"
-export AUTOENV_ENV_LEAVE_FILENAME=".autoenv.leave"
-export AUTOENV_ENABLE_LEAVE="y"
-source '/home/william/.nvm/versions/node/v18.12.1/lib/node_modules/@hyperupcall/autoenv/activate.sh'
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -88,6 +83,10 @@ export PATH="$PATH:/usr/local/go/bin"
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/Vagrant"
+
+export AUTOENV_ENV_FILENAME=".autoenv"
+export AUTOENV_ENV_LEAVE_FILENAME=".autoenv.leave"
+export AUTOENV_ENABLE_LEAVE="y"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -132,9 +131,9 @@ unset __conda_setup
 #command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init -)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #Star Ship
 eval "$(starship init zsh)"

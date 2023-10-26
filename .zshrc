@@ -138,11 +138,13 @@ unset __conda_setup
 #Star Ship
 eval "$(starship init zsh)"
 
-# Ruby Gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -f "$HOME/.rbenv/version" ]; then
+    # Ruby Gems
+    export GEM_HOME="$HOME/gems"
+    export PATH="$HOME/gems/bin:$PATH"
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # dotfiles
 alias config='/usr/bin/git --git-dir=/home/william/.dotfiles/ --work-tree=/home/william'

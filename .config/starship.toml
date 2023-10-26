@@ -50,7 +50,8 @@ symbol = "⌘ "
 symbol = " "
 
 [hostname]
-ssh_symbol = " "
+ssh_symbol = " "
+style = "bright-red"
 
 [java]
 symbol = " "

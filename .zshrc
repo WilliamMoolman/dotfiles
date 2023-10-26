@@ -8,7 +8,7 @@ export ZSH="/home/william/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="william"
+ZSH_THEME=""
 #"william"
 
 # Set list of themes to pick from when loading at random
@@ -71,7 +71,12 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git autoenv zsh-autosuggestions)
+
+export AUTOENV_ENV_FILENAME=".autoenv"
+export AUTOENV_ENV_LEAVE_FILENAME=".autoenv.leave"
+export AUTOENV_ENABLE_LEAVE="y"
+source '/home/william/.nvm/versions/node/v18.12.1/lib/node_modules/@hyperupcall/autoenv/activate.sh'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,4 +144,6 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# dotfiles
 alias config='/usr/bin/git --git-dir=/home/william/.dotfiles/ --work-tree=/home/william'

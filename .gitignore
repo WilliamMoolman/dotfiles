@@ -1,0 +1,6 @@
+# Autoenv
+.autoenv
+.autoenv.leave
+
+# Environment
+.env

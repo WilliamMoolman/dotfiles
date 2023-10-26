@@ -1,5 +1,6 @@
 [core]
 	autocrlf = input
+	excludesfile = /home/william/.gitignore
 [user]
 	email = moolman.william@gmail.com
 	name = William Moolman

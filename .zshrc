@@ -148,3 +148,4 @@ fi
 
 # dotfiles
 alias config='/usr/bin/git --git-dir=/home/william/.dotfiles/ --work-tree=/home/william'
+setopt HIST_IGNORE_SPACE

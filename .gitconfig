@@ -5,6 +5,7 @@
 	email = moolman.william@gmail.com
 	name = William Moolman
 [alias]
+    cb = checkout -b
 	cm = commit -m
     cam = commit -a -m
     glog = log --oneline --decorate --graph'

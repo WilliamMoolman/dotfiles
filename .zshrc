@@ -72,7 +72,7 @@ LS_COLORS=${LS_COLORS/:ow=*([^:]):/:ow=:}
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autoenv zsh-autosuggestions)
+plugins=(git autoenv zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,7 +144,15 @@ if [ -f "$HOME/.rbenv/version" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
+export PATH="/home/william/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # dotfiles
 alias config='/usr/bin/git --git-dir=/home/william/.dotfiles/ --work-tree=/home/william'
 setopt HIST_IGNORE_SPACE
+
+# Colour LS
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+alias ls="colorls --sd"
+alias l="colorls --sd -A"
+alias ll="colorls --sd --gs -A -l" 

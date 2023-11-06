@@ -11,3 +11,7 @@
     glog = log --oneline --decorate --graph'
     sup = push --set-upstream origin $(git_current_branch)
     whch = whatchanged -p --abbrev-commit --pretty=medium
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true

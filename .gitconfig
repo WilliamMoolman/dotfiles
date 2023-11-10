@@ -8,7 +8,7 @@
     cb = checkout -b
 	cm = commit -m
     cam = commit -a -m
-    glog = log --oneline --decorate --graph'
+    glog = log --oneline --decorate --graph
     sup = push --set-upstream origin $(git_current_branch)
     whch = whatchanged -p --abbrev-commit --pretty=medium
 [init]

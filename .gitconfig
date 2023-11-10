@@ -11,6 +11,7 @@
     glog = log --oneline --decorate --graph
     sup = push --set-upstream origin $(git_current_branch)
     whch = whatchanged -p --abbrev-commit --pretty=medium
+    nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
 [init]
 	defaultBranch = main
 [push]

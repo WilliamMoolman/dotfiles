@@ -151,8 +151,20 @@ alias config='/usr/bin/git --git-dir=/home/william/.dotfiles/ --work-tree=/home/
 setopt HIST_IGNORE_SPACE
 
 # Colour LS
-source $(dirname $(gem which colorls))/tab_complete.sh
+#source $(dirname $(gem which colorls))/tab_complete.sh
 
-alias ls="colorls --sd"
-alias l="colorls --sd -A"
-alias ll="colorls --sd --gs -A -l" 
+#alias ls="colorls --sd"
+#alias l="colorls --sd -A"
+#alias ll="colorls --sd --gs -A -l" 
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# nvm() {
+#     unset -f nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#    nvm "$@"
+#}

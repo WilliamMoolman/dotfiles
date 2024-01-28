@@ -110,7 +110,7 @@ export AUTOENV_ENABLE_LEAVE="y"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias g="gsutil"
-alias activvate="source ./venv/bin/activate || source ./.venv/bin/activate"
+alias activvate="source ./venv/bin/activate >/dev/null 2>&1 || source ./.venv/bin/activate"
 alias dice="ssh -F ~/.ssh/dice_config"
 
 # >>> conda initialize >>>

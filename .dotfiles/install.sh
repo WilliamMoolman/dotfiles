@@ -1,4 +1,9 @@
-git clone --bare git@github.com:WilliamMoolman/dotfiles.git $HOME/.dotfiles
+# Check if its an ssh or https clone
+if [ $1 == "ssh" ]; then
+    git clone --bare git@github.com:WilliamMoolman/dotfiles.git $HOME/.dotfiles
+else
+    git clone --bare https://github.com/WilliamMoolman/dotfiles.git $HOME/.dotfiles
+fi
 
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
@@ -14,3 +19,4 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
+

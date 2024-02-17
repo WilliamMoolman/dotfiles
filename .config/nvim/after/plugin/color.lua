@@ -1,14 +1,7 @@
 require("catppuccin").setup({
-        mocha = {
-            base = "#000000",
-            mantle = "#000000",
-            crust = "#000000",
-        },
-    flavour = "mocha",
-
+    flavour = "macchiato",
     color_overrides = {
     },
-
     integrations = {
         cmp = true,
         gitsigns = true,

@@ -8,7 +8,7 @@ require("catppuccin").setup({
 
     color_overrides = {
     },
-    
+
     integrations = {
         cmp = true,
         gitsigns = true,

@@ -25,32 +25,32 @@ require("lazy").setup({
         priority = 1000,
     },
     {
-        'nvim-telescope/telescope.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        "nvim-telescope/telescope.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
     },
     -- Autocompletion
     {
-        'hrsh7th/nvim-cmp',
+        "hrsh7th/nvim-cmp",
         dependencies = {
-            'L3MON4D3/LuaSnip',
+            "L3MON4D3/LuaSnip",
         },
     },
     {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     -- LSP
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v3.x",
         lazy = true,
         config = false,
     },
     {
-        'neovim/nvim-lspconfig',
+        "neovim/nvim-lspconfig",
         dependencies = {
-            'hrsh7th/cmp-nvim-lsp',
-        }
+            "hrsh7th/cmp-nvim-lsp",
+        },
     },
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -70,29 +70,84 @@ require("lazy").setup({
             -- your configuration comes here
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
-        }
+        },
     },
     {
-        'goolord/alpha-nvim',
+        "goolord/alpha-nvim",
         config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-        end
+            require("alpha").setup(require("alpha.themes.dashboard").config)
+        end,
     },
     -- Comments
-    'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
     -- Ergonomics
     {
-        'stevearc/dressing.nvim',
+        "stevearc/dressing.nvim",
         opts = {},
     },
     -- 'Shatur/neovim-session-manager',
     {
-        'stevearc/oil.nvim',
+        "stevearc/oil.nvim",
         opts = {},
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     "lewis6991/gitsigns.nvim",
-    "tpope/vim-fugitive",
+    {
+        "nvim-java/nvim-java",
+        dependencies = {
+            "nvim-java/lua-async-await",
+            "nvim-java/nvim-java-core",
+            "nvim-java/nvim-java-test",
+            "nvim-java/nvim-java-dap",
+            "MunifTanjim/nui.nvim",
+            "neovim/nvim-lspconfig",
+            "mfussenegger/nvim-dap",
+            {
+                "williamboman/mason.nvim",
+                opts = {
+                    registries = {
+                        "github:nvim-java/mason-registry",
+                        "github:mason-org/mason-registry",
+                    },
+                },
+            },
+        },
+    },
+    -- {
+    -- 	"m4xshen/hardtime.nvim",
+    -- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    -- 	opts = {},
+    -- },
+    -- { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+    -- "tpope/vim-fugitive",
+    -- {
+    --     "epwalsh/obsidian.nvim",
+    --     version = "*", -- recommended, use latest release instead of latest commit
+    --     lazy = true,
+    --     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    --     event = {
+    --       -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --       -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+    --       "BufReadPre /mnt/c/Users/moolm/Documents/digital-garden/**.md",
+    --       "BufNewFile /mnt/c/Users/moolm/Documents/digital-garden/**.md",
+    --     },
+    --     dependencies = {
+    --         -- Required.
+    --         "nvim-lua/plenary.nvim",
+    --     },
+    --     opts = {
+    --         workspaces = {
+    --             {
+    --                 name = "personal",
+    --                 path = "/mnt/c/Users/moolm/Documents/digital-garden",
+    --             },
+    --         },
+    --     },
+    -- },
 })
-

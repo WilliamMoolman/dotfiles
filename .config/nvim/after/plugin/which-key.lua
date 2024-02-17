@@ -11,8 +11,10 @@ local wk = require("which-key")
 wk.register({
 	f = {
 		name = "file", -- optional group name
+		b = { "<cmd>Telescope buffers<cr>", "Search Buffers" }, -- create a binding with label
 		f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
 		F = { "Format File" },
+		r = { "Find Recent Files" },
 	},
 	s = {
 		name = "session",
@@ -20,4 +22,12 @@ wk.register({
 		l = { "<cmd>SessionManager load_session<cr>", "Load Session" },
 		d = { "<cmd>SessionManager delete_session<cr>", "Delete Session" },
 	},
+	-- p = {
+	-- 	'"+p',
+	-- 	"Yank (System)",
+	-- },
+	-- y = {
+	-- 	'"+y',
+	-- 	"Yank (System)",
+	-- },
 }, { prefix = "<leader>" })

@@ -85,6 +85,33 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 # dotfiles
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+# Function to adopt a file into a stow package
+dot() {
+    # Check for the correct number of arguments
+    if [ $# -ne 1 ]; then
+        echo "Usage: dot <file_path>" 
+        return 1
+    fi
+
+    local file_path="$1"
+    local dotfiles_dir="$HOME/dotfiles"
+
+    # Create the target directory structure in ~/dotfiles
+    local target_dir="$dotfiles_dir/$(dirname $file_path)"
+    mkdir -p "$target_dir"
+
+    # Move the file to the stow package directory
+    mv "$file_path" "$target_dir/"
+
+    # Use stow to symlink the file back to its original location
+    cd "$dotfiles_dir" && stow "."
+}
+
+# Completion for adopt_to_stow function
+_comp_dot() {
+    _arguments "1:file path:_files" 
+}
+
+compdef _comp_dot dot
 
 setopt HIST_IGNORE_SPACE

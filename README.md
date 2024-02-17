@@ -4,7 +4,8 @@ My dotfiles are now managed with GNU stow. This is done by having all the dotfil
 ## Requirements
 GNU Stow:
 ```
-apt install stow
+apt install stow # Debian/Ubuntu
+pacmac -S stow # Arch
 ```
 
 ## Installation
@@ -12,8 +13,9 @@ Installing dotfiles in a new machine is done by:
 ```sh
 git clone git@github.com:WilliamMoolman/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow .
+stow --adopt .
 ```
+Any difference between the cloned files and those existing will appear as modification to files in the dotfiles directory. Run `git status` to check
 
 To add a file to the dotfiles, run:
 ```sh

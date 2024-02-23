@@ -86,9 +86,14 @@ fi
 
 # Prompt
 eval "$(starship init zsh)"
+
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
     alias cd="z"
+fi
+
+if command -v bat >/dev/null 2>&1; then
+    alias cat="bat"
 fi
 
 # dotfiles

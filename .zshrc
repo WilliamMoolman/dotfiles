@@ -69,13 +69,20 @@ autoenv_conda() {
     echo "Added conda env $1 to .autoenv"
 }
 
-nvm() {
-    unset -f nvm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-   nvm "$@"
-}
+if [[ "$HOST" == "WTT" ]]; then
+    nvm() {
+        unset -f nvm
+        export nvm_dir="$home/.nvm"
+        [ -s "$nvm_dir/nvm.sh" ] && \. "$nvm_dir/nvm.sh"  # this loads nvm
+        [ -s "$nvm_dir/bash_completion" ] && \. "$nvm_dir/bash_completion"  # this loads nvm bash_completion
+       nvm "$@"
+    }
+else
+    export nvm_dir="$home/.nvm"
+    [ -s "$nvm_dir/nvm.sh" ] && \. "$nvm_dir/nvm.sh"  # this loads nvm
+    [ -s "$nvm_dir/bash_completion" ] && \. "$nvm_dir/bash_completion"  # this loads nvm bash_completion
+fi
+
 
 # Prompt
 eval "$(starship init zsh)"

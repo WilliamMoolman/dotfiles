@@ -1,11 +1,18 @@
 # Aliases
 alias g="gsutil"
 alias activvate="source ./venv/bin/activate >/dev/null 2>&1 || source ./.venv/bin/activate"
-alias dice="ssh -F ~/.ssh/dice_config"
 alias vim="nvim"
 alias vi="nvim"
-alias open="explorer.exe"
 
+## Directories
+alias open="explorer.exe"
+alias ls='ls --color=auto'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
 
 autoenv_conda() {
     echo "conda activate $1" >> .autoenv

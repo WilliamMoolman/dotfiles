@@ -1,3 +1,5 @@
+autoload -U compinit && compinit
+
 # Prompt
 eval "$(starship init zsh)"
 
